@@ -34,13 +34,17 @@ while water != 0 and milk != 0 and coffe_beans != 0:
             milk -= 100
 
 
+    def give_coffee_change(coffee):
+        print("Here is your change Rs" + str(change))
+        decrease_resources(coffe_type)
+        print(f"Here is your {coffee}!Enjoy!")
+
+
     if coffe_type == "espresso":
         if water >= 50 and coffe_beans >= 18:
             take_money()
             if money >= 100:
-                print("Here is your change Rs" + str(change))
-                decrease_resources(coffe_type)
-                print("Here is your espresso!Enjoy!")
+                give_coffee_change(coffe_type)
             else:
                 print("Not enough money! Here is your refund Rs" + str(money))
 
@@ -50,20 +54,14 @@ while water != 0 and milk != 0 and coffe_beans != 0:
         if water >= 0 and coffe_beans >= 24 and milk >= 150:
             take_money()
             if money >= 150:
-                print("Here is your change Rs" + str(change))
-                decrease_resources(coffe_type)
-                print("Here is your espresso!Enjoy!")
-            else:
-                print("Not enough money! Here is your refund Rs" + str(money))
+                give_coffee_change(coffe_type)
         else:
             print("sorry! resources not sufficient")
     elif coffe_type == "cappuccino":
         if water >= 0 and coffe_beans >= 24 and milk >= 150:
             take_money()
             if money >= 200:
-                print("Here is your change Rs" + str(change))
-                decrease_resources(coffe_type)
-                print("Here is your espresso!Enjoy!")
+                give_coffee_change(coffe_type)
             else:
                 print("Not enough money! Here is your refund Rs" + str(money))
         else:
